@@ -69,21 +69,21 @@ const BOARD_HEIGHT = 20
 
 export default function Tetris() {
     const [board, setBoard] = useState(createBoard())
-    const [currentPiece, setCurrentPiece] = useState(null)
+    const [currentPiece, setCurrentPiece] = useState<any>(null)
     const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 })
     const [score, setScore] = useState(0)
     const [level, setLevel] = useState(1)
     const [lines, setLines] = useState(0)
     const [gameOver, setGameOver] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
-    const [dropTime, setDropTime] = useState(null)
+    const [dropTime, setDropTime] = useState<number | null>(null)
 
     function createBoard() {
         return Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill(0))
     }
 
     function getRandomPiece() {
-        const pieces = Object.keys(TETROMINOS)
+        const pieces = Object.keys(TETROMINOS) as (keyof typeof TETROMINOS)[]
         const randomPiece = pieces[Math.floor(Math.random() * pieces.length)]
         return {
             ...TETROMINOS[randomPiece],
@@ -91,7 +91,7 @@ export default function Tetris() {
         }
     }
 
-    function isValidMove(piece, position, board) {
+    function isValidMove(piece: any, position: { x: number; y: number }, board: number[][]) {
         for (let y = 0; y < piece.shape.length; y++) {
             for (let x = 0; x < piece.shape[y].length; x++) {
                 if (piece.shape[y][x]) {
@@ -134,7 +134,7 @@ export default function Tetris() {
         spawnNewPiece()
     }
 
-    function checkLines(board) {
+    function checkLines(board: number[][]) {
         let linesCleared = 0
 
         for (let y = board.length - 1; y >= 0; y--) {
@@ -169,7 +169,7 @@ export default function Tetris() {
         setCurrentPosition(newPosition)
     }
 
-    function movePiece(direction) {
+    function movePiece(direction: 'left' | 'right' | 'down') {
         if (!currentPiece || gameOver || isPaused) return
 
         const newPosition = {
@@ -187,8 +187,8 @@ export default function Tetris() {
     function rotatePiece() {
         if (!currentPiece || gameOver || isPaused) return
 
-        const rotated = currentPiece.shape[0].map((_, i) =>
-            currentPiece.shape.map(row => row[row.length - 1 - i])
+        const rotated = currentPiece.shape[0].map((_: any, i: number) =>
+            currentPiece.shape.map((row: any) => row[row.length - 1 - i])
         )
 
         const rotatedPiece = { ...currentPiece, shape: rotated }
@@ -198,7 +198,7 @@ export default function Tetris() {
         }
     }
 
-    function handleKeyPress(e) {
+    function handleKeyPress(e: KeyboardEvent) {
         if (gameOver) return
 
         switch (e.key) {
@@ -253,10 +253,10 @@ export default function Tetris() {
         setIsPaused(false)
     }
 
-    function renderCell(cell, x, y) {
+    function renderCell(cell: number | string, x: number, y: number) {
         if (cell === 0) return null
 
-        const piece = TETROMINOS[cell]
+        const piece = TETROMINOS[cell as keyof typeof TETROMINOS]
         return (
             <motion.div
                 key={`${x}-${y}`}
@@ -271,8 +271,8 @@ export default function Tetris() {
     function renderCurrentPiece() {
         if (!currentPiece) return null
 
-        return currentPiece.shape.map((row, y) =>
-            row.map((cell, x) => {
+        return currentPiece.shape.map((row: any, y: number) =>
+            row.map((cell: any, x: number) => {
                 if (!cell) return null
 
                 const boardX = currentPosition.x + x

@@ -17,6 +17,11 @@ module.exports = {
                 'dark-bg': '#0a0a0a',
                 'darker-bg': '#050505',
                 'grid-color': '#1a1a1a',
+                // Light mode colors
+                'light-bg': '#f8fafc',
+                'lighter-bg': '#ffffff',
+                'light-text': '#1e293b',
+                'light-muted': '#64748b',
             },
             animation: {
                 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',

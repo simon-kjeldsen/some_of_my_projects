@@ -59,14 +59,15 @@ const projects: ProjectCard[] = [
         href: '/tetris'
     },
     {
-        id: 'music-visualizer',
-        title: 'Audio Visualizer',
-        description: 'Real-time musik visualisering med FFT og beat detection',
-        category: 'Audio',
-        icon: '🎵',
+        id: 'weather-app',
+        title: 'Weather App',
+        description: 'Moderne vejr-app med live data og præcise prognoser via OpenWeatherMap-API',
+        category: 'Weather',
+        icon: '🌤️',
         color: 'neon-blue',
-        gradient: 'from-neon-blue to-cyan-500',
-        href: '/audio-visualizer'
+        gradient: 'from-blue-400 to-cyan-500',
+        href: '/weather',
+        isNew: true
     },
     {
         id: 'crypto-tracker',

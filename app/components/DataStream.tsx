@@ -135,7 +135,7 @@ const DataStream = ({ isActive }: DataStreamProps) => {
                                     animate={{ opacity: [0, 1, 0] }}
                                     transition={{ duration: 1, repeat: Infinity }}
                                 >
-                  > Processing...
+                                    &gt; Processing...
                                 </motion.div>
                             )}
                         </div>
