@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-dark-bg text-white overflow-x-hidden;
+        font-family: 'Courier New', monospace;
+    }
+}
+
+@layer components {
+    .neon-text {
+        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+
+    .neon-border {
+        box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, inset 0 0 5px currentColor;
+    }
+
+    .grid-bg {
+        background-image:
+            linear-gradient(rgba(26, 26, 26, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(26, 26, 26, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+    }
+
+    .scan-line {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00ffff, transparent);
+        animation: scan 2s linear infinite;
+    }
+
+    .matrix-rain {
+        position: absolute;
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1;
+        white-space: nowrap;
+        animation: matrix 20s linear infinite;
+    }
+}
+
+@layer utilities {
+    .text-glow {
+        text-shadow: 0 0 10px currentColor;
+    }
+
+    .bg-gradient-futuristic {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    }
+}
