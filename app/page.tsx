@@ -172,7 +172,7 @@ export default function Home() {
                                     <Link href="/portfolio">
                                         <motion.button
                                             className={`px-8 py-4 bg-${section.color} text-black font-bold text-xl rounded-lg
-                               hover:scale-105 transition-all duration-300 neon-border bg-neon-green`}
+                               hover:scale-105 transition-all duration-300 neon-border bg-white`}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                         >

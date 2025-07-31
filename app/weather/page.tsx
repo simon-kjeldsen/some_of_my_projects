@@ -190,13 +190,25 @@ export default function WeatherApp() {
                 </Link>
             </motion.div>
 
-            {/* City Selector */}
+            {/* City Selector and Globe Button */}
             <motion.div
-                className="absolute top-6 right-6 z-20"
+                className="absolute top-6 right-6 z-20 flex gap-3"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
             >
+                <Link href="/weather/globe">
+                    <motion.button
+                        className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-lg
+                         hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <span className="text-lg">🌍</span>
+                        <span className="hidden sm:inline">Globus</span>
+                    </motion.button>
+                </Link>
+
                 <select
                     value={city}
                     onChange={(e) => handleCityChange(e.target.value)}
@@ -208,6 +220,17 @@ export default function WeatherApp() {
                     <option value="Odense">Odense</option>
                     <option value="Aalborg">Aalborg</option>
                     <option value="Esbjerg">Esbjerg</option>
+                    <option value="Randers">Randers</option>
+                    <option value="Kolding">Kolding</option>
+                    <option value="Horsens">Horsens</option>
+                    <option value="Vejle">Vejle</option>
+                    <option value="Roskilde">Roskilde</option>
+                    <option value="Herning">Herning</option>
+                    <option value="Silkeborg">Silkeborg</option>
+                    <option value="Næstved">Næstved</option>
+                    <option value="Fredericia">Fredericia</option>
+                    <option value="Viborg">Viborg</option>
+                    <option value="Køge">Køge</option>
                 </select>
             </motion.div>
 
@@ -293,8 +316,8 @@ export default function WeatherApp() {
                                     {/* Live Data Indicator */}
                                     <motion.div
                                         className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${isLiveData
-                                                ? 'bg-green-500/20 text-green-300 border border-green-500/30'
-                                                : 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
+                                            ? 'bg-green-500/20 text-green-300 border border-green-500/30'
+                                            : 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
                                             }`}
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
@@ -362,7 +385,7 @@ export default function WeatherApp() {
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 0.8, delay: 1 }}
                                     >
-                                        7-dages prognose
+                                        5-dages prognose
                                     </motion.h2>
 
                                     <div className="grid grid-cols-1 md:grid-cols-7 gap-4">

@@ -70,14 +70,15 @@ const projects: ProjectCard[] = [
         isNew: true
     },
     {
-        id: 'crypto-tracker',
-        title: 'Crypto Tracker',
-        description: 'Live cryptocurrency tracking med real-time price updates',
-        category: 'Finance',
-        icon: '₿',
+        id: 'ecommerce-app',
+        title: 'E-Commerce App',
+        description: 'Fuldt funktionel og moderne webshop med login-system (inkl. Google Auth), Stripe-betaling, database og admin-panel.',
+        category: 'E-Commerce',
+        icon: '🛒',
         color: 'neon-yellow',
         gradient: 'from-yellow-400 to-orange-500',
-        href: '/crypto-tracker'
+        href: 'https://sportio-website.vercel.app/',
+        isNew: true
     }
 ]
 
