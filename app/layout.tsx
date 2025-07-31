@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { ThemeProvider } from './contexts/ThemeContext'
+import CustomCursor from './components/CustomCursor'
 
 export const metadata: Metadata = {
     title: 'Neural Network Visualizer',
@@ -17,6 +18,7 @@ export default function RootLayout({
             <body className="transition-colors duration-300">
                 <ThemeProvider>
                     {children}
+                    <CustomCursor />
                 </ThemeProvider>
             </body>
         </html>

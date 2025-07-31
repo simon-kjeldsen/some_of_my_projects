@@ -90,4 +90,60 @@
     .light .bg-gradient-futuristic {
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f8fafc 100%);
     }
+
+    .bg-gradient-homepage {
+        background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+    }
+
+    .light .bg-gradient-homepage {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f8fafc 100%);
+    }
+
+    /* Light mode footer styling */
+    .light .bg-darker-bg {
+        background-color: #ffffff;
+    }
+
+    .light .border-gray-800 {
+        border-color: #e5e7eb;
+    }
+
+    .light .text-gray-400 {
+        color: #6b7280;
+    }
+
+    .light .text-gray-500 {
+        color: #6b7280;
+    }
+
+    /* Custom Cursor */
+    body {
+        cursor: none;
+    }
+
+    .custom-cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #00ffff 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: difference;
+        transition: transform 0.1s ease;
+    }
+
+    .custom-cursor.hover {
+        transform: scale(1.5);
+        background: radial-gradient(circle, #00ffff 0%, transparent 50%);
+    }
+
+    /* Fallback for light mode */
+    .light .custom-cursor {
+        background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+    }
+
+    .light .custom-cursor.hover {
+        background: radial-gradient(circle, #3b82f6 0%, transparent 50%);
+    }
 }

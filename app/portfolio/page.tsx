@@ -31,7 +31,7 @@ const projects: ProjectCard[] = [
     {
         id: 'juridisk-assistent',
         title: 'Juridisk Assistent',
-        description: 'AI-drevet juridisk assistent med moderne teknologi og intuitive løsninger',
+        description: 'AI-drevet juridisk assistent via Google Gemini API med login funktionalitet samt gemte chats',
         category: 'AI/ML',
         icon: '⚖️',
         color: 'neon-blue',
@@ -39,14 +39,15 @@ const projects: ProjectCard[] = [
         href: 'https://jura-assistent.vercel.app/auth/signin'
     },
     {
-        id: 'data-dashboard',
-        title: 'Real-time Dashboard',
-        description: 'Live data visualisering med interaktive charts og metrics',
-        category: 'Data',
-        icon: '📊',
+        id: 'news-aggregator',
+        title: 'News Aggregator',
+        description: 'Moderne nyheds-aggregator med live feeds fra forskellige kilder og kategorier via NewsAPI',
+        category: 'News',
+        icon: '📰',
         color: 'neon-green',
         gradient: 'from-neon-green to-emerald-500',
-        href: '/dashboard'
+        href: '/news',
+        isNew: true
     },
     {
         id: 'tetris',
@@ -91,7 +92,70 @@ export default function Portfolio() {
     }, [])
 
     return (
-        <main className="min-h-screen bg-dark-bg relative overflow-hidden">
+        <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+            {/* Animated Background */}
+            <div className="absolute inset-0">
+                {/* Floating Project Icons */}
+                <motion.div
+                    className="absolute top-20 left-10 text-4xl opacity-10"
+                    animate={{
+                        y: [0, -20, 0],
+                        rotate: [0, 5, 0]
+                    }}
+                    transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    ⚡
+                </motion.div>
+                <motion.div
+                    className="absolute top-40 right-20 text-3xl opacity-10"
+                    animate={{
+                        y: [0, 15, 0],
+                        rotate: [0, -5, 0]
+                    }}
+                    transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1
+                    }}
+                >
+                    🎮
+                </motion.div>
+                <motion.div
+                    className="absolute bottom-40 left-20 text-2xl opacity-10"
+                    animate={{
+                        y: [0, -10, 0],
+                        rotate: [0, 3, 0]
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 2
+                    }}
+                >
+                    📰
+                </motion.div>
+                <motion.div
+                    className="absolute bottom-20 right-10 text-3xl opacity-10"
+                    animate={{
+                        y: [0, 10, 0],
+                        rotate: [0, -3, 0]
+                    }}
+                    transition={{
+                        duration: 7,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 3
+                    }}
+                >
+                    🌤️
+                </motion.div>
+            </div>
 
             {/* Back Button */}
             <motion.div

@@ -57,51 +57,12 @@ export default function Home() {
 
     return (
         <div className="relative min-h-screen overflow-hidden">
+            {/* Dark Mode Background - Always visible */}
+            <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black dark:block light:hidden z-0" />
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            {/* Background Images with Parallax */}
-            <div className="fixed inset-0 z-0">
-                <motion.div
-                    className="absolute inset-0"
-                    style={{ y: y1, opacity: opacity1 }}
-                >
-                    <Image
-                        src={backgrounds[0]}
-                        alt="Abstract Futuristic Background"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-overlay" />
-                </motion.div>
 
-                <motion.div
-                    className="absolute inset-0"
-                    style={{ y: y2, opacity: opacity2 }}
-                >
-                    <Image
-                        src={backgrounds[1]}
-                        alt="Robot Portrait Background"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-overlay" />
-                </motion.div>
-
-                <motion.div
-                    className="absolute inset-0"
-                    style={{ y: y2, opacity: opacity3 }}
-                >
-                    <Image
-                        src={backgrounds[2]}
-                        alt="Neon Dataflow Background"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-overlay" />
-                </motion.div>
-            </div>
 
             {/* Content Sections */}
             <div className="relative z-20">
@@ -209,19 +170,19 @@ export default function Home() {
             </div>
 
             {/* Footer */}
-            <div className="relative z-20 bg-darker-bg dark:bg-darker-bg light:bg-lighter-bg border-t border-gray-800 dark:border-gray-800 light:border-gray-200 py-8">
+            <div className="relative z-20 bg-darker-bg dark:bg-darker-bg light:bg-lighter-bg border-t border-gray-800 dark:border-gray-800 light:border-gray-200 py-8 transition-colors duration-300">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div>
-                            <h3 className="text-neon-cyan font-bold mb-2">TECHNOLOGIES</h3>
+                            <h3 className="text-neon-cyan dark:text-neon-cyan light:text-gray-800 font-bold mb-2">TECHNOLOGIES</h3>
                             <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm">React, TypeScript, Next.js, Tailwind CSS, Framer Motion</p>
                         </div>
                         <div>
-                            <h3 className="text-neon-cyan font-bold mb-2">TOPICS</h3>
+                            <h3 className="text-neon-cyan dark:text-neon-cyan light:text-gray-800 font-bold mb-2">TOPICS</h3>
                             <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm">Frontend Development, UI/UX Design, Interactive Animations</p>
                         </div>
                         <div>
-                            <h3 className="text-neon-cyan font-bold mb-2">GITHUB ACCOUNT</h3>
+                            <h3 className="text-neon-cyan dark:text-neon-cyan light:text-gray-800 font-bold mb-2">GITHUB ACCOUNT</h3>
                             <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm">simon-kjeldsen</p>
                         </div>
                     </div>
